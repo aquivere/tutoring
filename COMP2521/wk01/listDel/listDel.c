@@ -4,9 +4,11 @@
 
 #include "List.h"
 
-void listDelete(struct list *l, int value);
+void listDelete(List l, int value);
 
 int main(int argc, char **argv) {
+    printf("%d\n", argc);
+    /*
     List l = createList(argc, argv);
     printf("Original list: ");
     printList(l);
@@ -18,9 +20,26 @@ int main(int argc, char **argv) {
     printf("List after deleting: ");
     printList(l);
     freeList(l);
-    return 0;
+    return 0;*/
 }
 
-void listDelete(struct list *l, int value) {
-
+void listDelete(List l, int value) {
+    Node curr = l->head;
+    // deleting the head node
+    if (curr->value == value) {
+        l->head = curr->next;
+        free(curr);
+        return;
+    }
+    // deleting the middle or last node
+    Node prev = NULL;
+    while (curr != NULL) {
+        if (curr->value == value) {
+            prev->next = curr->next;
+            free(curr);
+            return;
+        }
+        prev = curr;
+        curr = curr->next;
+    }
 }
