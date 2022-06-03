@@ -9,6 +9,7 @@ int sumFor(List l);
 
 int main(int argc, char **argv) {
     List l = createList(argc, argv);
+    printList(l);
     freeList(l);
     return 0;
 }
