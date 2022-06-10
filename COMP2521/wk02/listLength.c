@@ -18,5 +18,11 @@ int main(int argc, char **argv) {
 
 // find the length of the list
 int getLength(List list) {
-    return -1;
+    // base case: return 0 when we have an empty list
+    if (list == NULL) {
+        return 0;
+    }
+
+    // recursive case: 1 + the length of the rest of the list
+    return 1 + getLength(list->next);
 }
