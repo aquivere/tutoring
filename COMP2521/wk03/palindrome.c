@@ -17,6 +17,18 @@ int main(int argc, char *argv[]) {
 
 // returns true if string s is a palindrome
 // otherwise false
+// Time complexity: O(n)
 bool isPalindrome(char *s) {
-	return false;
+	int forward = 0;
+	int reverse = strlen(s) - 1;
+
+	while (forward <= reverse) { // we iterate through this n/2 times
+		if (s[forward] != s[reverse]) {
+			return false;
+		}
+		forward++;
+		reverse--;
+	}
+
+	return true;
 }
