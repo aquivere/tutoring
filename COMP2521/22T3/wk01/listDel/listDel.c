@@ -22,5 +22,34 @@ int main(int argc, char **argv) {
 }
 
 void listDelete(List l, int value) {
-    // TODO: complete this function
+    // CASES 
+    // empty 
+    // value is head of list 
+    // value is in the middle or tail of the list 
+
+    // List is empty
+    if (l->head == NULL) {
+        return;
+    }
+
+    // Value is at the head of the list
+    Node curr = l->head;
+    if (curr->value == value) {
+        l->head = curr->next;
+        free(curr);
+        return;
+    }
+
+    // Value is in the middle or tail of the list
+    while (curr->next != NULL && curr->next->value != value) {
+        curr = curr->next;
+    }
+    // curr->next == NULL OR curr->next->value == value
+    if (curr->next == NULL) {
+        return;
+    }
+    Node temp = curr->next; 
+    curr->next = curr->next->next;
+    free(temp);
+    return;
 }

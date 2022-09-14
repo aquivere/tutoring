@@ -12,13 +12,15 @@ int main(void) {
 }
 
 void countWhile() {
-	int i = 10; 
-	while (i >= 0) { 
+	int i = 10; // initialisation
+	while (i >= 0) { // condition
 		printf("%d\n", i);
-		i--;
+		i--; // increment
 	}
 }
 
 void countFor() {
-    // TODO: create the for loop
+	for (int i = 10; i >= 0; i--) {
+		printf("%d\n", i);
+	}
 }

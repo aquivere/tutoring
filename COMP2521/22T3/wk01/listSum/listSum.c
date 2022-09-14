@@ -10,16 +10,20 @@ int sumFor(List l);
 int main(int argc, char **argv) {
     List l = createList(argc, argv);
     printList(l);
-    int sum = sumWhile(l);
+    int sum = sumFor(l);
     printf("This is the sum: %d\n", sum);
     freeList(l);
     return 0;
 }
 
 int sumWhile(List l) {
-    // TOOD: complete this function
+
 }
 
 int sumFor(List l) {
-    // TODO: complete this function
+    int sum = 0;
+    for (List curr = l; curr != NULL; curr = curr->next) {
+        sum += curr->value;
+    }
+    return sum;
 }
