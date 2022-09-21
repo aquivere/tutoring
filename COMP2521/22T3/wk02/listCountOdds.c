@@ -18,6 +18,15 @@ int main(int argc, char **argv) {
 
 // Count the number of odd items in the list
 int getOdds(List l) {
-    // TODO: Complete this function
-    return -1;
+    // Base Case: empty list
+    if (l == NULL) {
+        return 0;
+    }
+    // if odd
+    if (l->value % 2 == 1) {
+        return 1 + getOdds(l->next);
+    } else {
+        // if even
+        return getOdds(l->next);
+    }
 }

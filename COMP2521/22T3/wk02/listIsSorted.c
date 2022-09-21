@@ -23,6 +23,19 @@ int main(int argc, char **argv) {
 
 // Returns whether a list is sorted or not
 bool listIsSorted(List l) {
-    // TODO: Complete this function
-    return false;
+    // Base case: empty list
+    if (l == NULL) {
+        return true;
+    }
+    // Base case: only one item in list
+    if (l->next == NULL) {
+        return true;
+    }
+    // If not sorted, return false
+    if (l->value > l->next->value) {
+        return false;
+    }
+
+    // Recursive call
+    return listIsSorted(l->next);
 }

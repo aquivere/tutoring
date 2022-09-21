@@ -20,6 +20,18 @@ int main(int argc, char **argv) {
 
 // Deletes all the even items from the list and returns the remaining list
 List deleteEvens(List l) {
-    // TODO: Complete this function
-    return NULL;
+    // Base case: list is empty
+    if (l == NULL) {
+        return NULL;
+    }
+    // if odd
+    if (l->value % 2 == 1) {
+        l->next = deleteEvens(l->next);
+        return l;
+    } else {
+        // if even
+        List restOfList = l->next;
+        free(l);
+        return deleteEvens(restOfList);
+    }
 }
