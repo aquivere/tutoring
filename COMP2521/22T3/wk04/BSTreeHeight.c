@@ -10,7 +10,13 @@ int main(int argc, char **argv) {
     return 0;
 }
 
+// Assume height of an empty tree is -1
 int BSTreeHeight(BSTree t) {
-    // TODO: complete this function
-    return -1;
+    // base case
+    if (t == NULL) {
+        return -1;
+    }
+    int leftHeight = BSTreeHeight(t->left);
+    int rightHeight = BSTreeHeight(t->right);
+    return 1 + ((leftHeight > rightHeight) ? leftHeight : rightHeight); // 1 + max height of left or right subtree
 }

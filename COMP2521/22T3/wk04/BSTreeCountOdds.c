@@ -11,6 +11,14 @@ int main(int argc, char **argv) {
 }
 
 int BSTreeCountOdds(BSTree t) {
-    // TODO: complete this function
-    return -1;
+    // base case
+    if (t == NULL) {
+        return 0;
+    }
+    if (t->value % 2 != 0) {
+        // current node is odd
+        return 1 + BSTreeCountOdds(t->left) + BSTreeCountOdds(t->right);
+    } else {
+        return BSTreeCountOdds(t->left) + BSTreeCountOdds(t->right);
+    }
 }

@@ -11,6 +11,10 @@ int main(int argc, char **argv) {
 }
 
 int BSTreeNumNodes(BSTree t) {
-    // TODO: complete this function
-    return -1;
+    // base case 
+    if (t == NULL) {
+        return 0;
+    }
+    // recursive call
+    return 1 + BSTreeNumNodes(t->left) + BSTreeNumNodes(t->right);
 }
