@@ -26,4 +26,12 @@ int main(int argc, char **argv) {
 
 // Returns whether a list is sorted or not
 bool listIsSorted(Node l) {
+    // Base case
+    if (l == NULL || l->next == NULL) {
+        return true;
+    }
+    if (l->value > l->next->value) {
+        return false;
+    }
+    return listIsSorted(l->next);
 }

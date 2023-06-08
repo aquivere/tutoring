@@ -9,12 +9,12 @@ struct node {
 typedef struct node *Node; // pointer to first Node
 
 // Creates a list from command line
-List createList(int argc, char **argv);
+Node createList(int argc, char **argv);
 
 // Prints list
-void printList(List l);
+void printList(Node l);
 
 // Frees list
-void freeList(List l);
+void freeList(Node l);
 
 #endif

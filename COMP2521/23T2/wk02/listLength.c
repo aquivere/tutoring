@@ -3,7 +3,7 @@
 
 #include "List.h"
 
-int listLength(Node list);
+int listLength(Node l);
 
 int main(int argc, char **argv) {
     Node l = createList(argc, argv);
@@ -17,5 +17,22 @@ int main(int argc, char **argv) {
 }
 
 // Find the length of the list
-int listLength(Node list) {
+int doListLength(Node l) {
+    // ITERATIVE
+    // Node curr = l;
+    // int count = 0;
+    // while (curr != NULL) {
+    //     count += 1;
+    //     curr = curr->next;
+    // }
+    // return count;
+
+    // RECURSIVE
+    // Base case
+    if (l == NULL) {
+        return 0;
+    }
+
+    // Recurse
+    return 1 + listLength(l->next);
 }

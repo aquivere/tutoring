@@ -6,7 +6,7 @@ int fibIterative(int n);
 
 int main(int argc, char **argv) {
     int n = atoi(argv[1]);
-    int result = fibIterative(n);
+    int result = fib(n);
     printf("%d\n", result);
 }
 
