@@ -1,6 +1,6 @@
-Design an O(n) time algorithm for computing p(x). Assume the coefficients a_i are stored in array A.
+Design an O(n) time algorithm for computing $p(x)=a_nx^n + a_{n-1}x^{n-1} + ... + a_1x+a_0$. Assume the coefficients $a_i$ are stored in array $A = [a_0, a_1, a_2,...,a_n]$.
 
-Note: assume the power function uses a loop to compute the i^th power of x
+Note: assume the power function uses a loop to compute the $i^{th}$ power of x
 
 ```
 evalPolynomial(A, n, x): 
