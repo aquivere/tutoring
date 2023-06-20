@@ -11,11 +11,18 @@ evalPolynomial(A, n, x):
     return result 
 ```
 
-What is the above's time complexity? ```O()``` 
+What is the above's time complexity? ```O(n^2)``` 
 
 
 How could we compute this more efficiently? 
 
 ```
 evalPolynomial(A, n, x):
+    powerx = 1
+    result = 0
+    for i = 0 up to n do
+        result = result + A[i] * powerx
+        powerx = powerx * x
+    end for
 ```
+Time complexity: O(n)

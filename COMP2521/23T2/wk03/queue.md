@@ -19,10 +19,6 @@ QueueDequeue:
 	return front
 ```
 
-Enqueue time complexity: ```O()```  
-Dequeue time complexity: ```O()```  
+Enqueue time complexity: ```O(1)```  
+Dequeue time complexity: ```O(n)```  
   
-How can we improve the efficiency of dequeue?
-```
-
-```
