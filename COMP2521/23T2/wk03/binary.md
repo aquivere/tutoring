@@ -12,3 +12,5 @@ BinaryConversion:
 	return S
 ```
 What is the time complexity of the algorithm? Assume that creating a stack and pushing an element onto a stack are both $O(1)$ operations (i.e., constant).
+
+Time complexity = $O(log(n))$
