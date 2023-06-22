@@ -12,5 +12,20 @@ int main(int argc, char **argv) {
 
 // Assume height of an empty tree is -1
 int BSTreeHeight(BSTree t) {
-    return -1;
+    // base case
+    if (t == NULL) {
+        return -1;
+    }
+    if (t->left == NULL && t->right == NULL) {
+        return 0;
+    }
+
+    // recursive case
+    int leftHeight = BSTreeHeight(t->left);
+    int rightHeight = BSTreeHeight(t->right);
+    if (leftHeight > rightHeight) {
+        return leftHeight + 1;
+    } else {
+        return rightHeight + 1;
+    }
 }
