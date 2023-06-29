@@ -1,0 +1,30 @@
+// Using an AVL tree, design an algorithm to determine if an array 
+// contains two elements that sum to a given value.
+
+hasTwoSum(A, v):
+    Input:  array A[0..n-1] of integers
+            integer v
+    Output: true if A contains two elements that sum to v, false otherwise
+    
+    // get number, subtract sum from number, check if that is in AVL tree 
+
+    AVLTree t = initialise new AVL tree 
+    for i = 0 to n - 1; do 
+        insert A[i] into t
+    done
+    // ^^ Time complexity: O(n)
+
+    for i = 0 to n - 1; do 
+        int diff = v - A[i]
+        if diff = A[i] and A[i] exists more than once in t; then // <- O(logn)
+            return true
+        else if diff != A[i] and diff is in t; then // <- O(logn)
+            return true 
+        end if
+    done
+    // ^^ Time complexity: O(nlogn)
+
+    return false 
+
+
+// hasTwoSum(A,v) has time complexity of O(nlogn)
