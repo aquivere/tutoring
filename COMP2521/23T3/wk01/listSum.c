@@ -21,6 +21,11 @@ int main(int argc, char **argv) {
 }
 
 int sumList(struct node *l) {
-    // TODO
-    return -1;
+    struct node *curr = l;
+	int sum = 0;
+	while (curr != NULL) {
+		sum += curr->value;
+		curr = curr->next;
+	}
+	return sum;
 }

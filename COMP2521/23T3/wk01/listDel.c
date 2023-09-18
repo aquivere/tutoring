@@ -22,6 +22,28 @@ int main(int argc, char **argv) {
 }
 
 struct node *listDelete(struct node *l, int value) {
-    // TODO
-    return NULL;
+    // if list is empty
+    if (l == NULL) {
+        return NULL;
+    
+    // delete head of list
+    } else if (l->value == value) {
+        struct node *nextHead = l->next;
+        free(l);
+        return nextHead;
+    
+    // delete middle of list
+    } else {
+        struct node *curr = l;
+        while (curr->next != NULL) {
+            if (curr->next->value == value) {
+                struct node *tempDelete = curr->next;
+                curr->next = tempDelete->next;
+                free(tempDelete);
+                break;
+            }
+            curr = curr->next;
+        }
+        return l;
+    }
 }
