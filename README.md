@@ -1,2 +1,2 @@
 # COMP2521 tutorial resources
-For 23T2, go here: [H13A tutorial](COMP2521/23T2)
+For 23T3, go here: [T15C tutorial](COMP2521/23T3)
