@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 
     int value = 1; // value to delete is 1
     list = listDelete(list, value);
-    printf("List without evens: ");
+    printf("List without value: ");
     printList(list);
 
     freeList(list);
@@ -22,5 +22,17 @@ int main(int argc, char **argv)
 
 // Deletes the first instance of a value from a linked list, if it exists
 Node listDelete(Node list, int value) {
-    return NULL;
+    // base case
+    if (list == NULL) {
+        return NULL;
+    }
+    if (list->value == value) {
+        Node newHead = list->next;
+        free(list);
+        return newHead;
+    }
+
+    // recursive case
+    list->next = listDelete(list->next, value);
+    return list;
 }

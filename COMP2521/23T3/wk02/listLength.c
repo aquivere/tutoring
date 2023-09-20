@@ -18,5 +18,11 @@ int main(int argc, char **argv) {
 
 // Find the length of the list
 int listLength(Node l) {
-    return -1;
+    // base case
+    if (l == NULL) {
+        return 0;
+    }
+
+    // recursive 
+    return 1 + listLength(l->next);
 }

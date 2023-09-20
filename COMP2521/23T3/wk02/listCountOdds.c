@@ -18,5 +18,12 @@ int main(int argc, char **argv) {
 
 // Count the number of odd items in the list
 int listCountOdds(Node l) {
-    return -1;
+    if (l == NULL) {
+        return 0;
+    }
+    if (l->value % 2 == 1) {
+        return 1 + listCountOdds(l->next);
+    } else {
+        return listCountOdds(l->next);
+    }
 }

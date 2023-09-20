@@ -1,0 +1,13 @@
+bool isPalindrome(char *s, int n) {
+	int front = 0; // 1
+    int end = n - 1; // 1
+    while (front < end) { // n / 2
+        if (s[front] != s[end]) { // n / 2
+            return false; 
+        }
+        front = front + 1; // n / 2
+        end = end -  1; // n / 2
+    }
+}
+
+// The lines are executed 2n + 2 times in total -> O(n)
