@@ -11,6 +11,11 @@ int main(int argc, char **argv) {
 }
 
 int bstCountInternal(BSTree t) {
-    // TODO
-    return -1;
+    // base case
+    if (t == NULL) {
+        return 0;
+    } else if (t->left == NULL && t->right == NULL) {
+        return 0;
+    }
+    return 1 + bstCountInternal(t->left) + bstCountInternal(t->right);
 }
