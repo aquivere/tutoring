@@ -3,11 +3,13 @@
 #include <Set.h>
 
 int numOddOccurrences(int arr[], int size) {
-	// TODO
-     return -1;
-}
-
-int numSingleOccurrences(int arr[], int size) {
-    // TODO 
-    return -1;
+    Set setWithOddOcc = SetNew();
+	for (int i = 0; i < size; i++) {
+        if (SetContains(setWithOddOcc, arr[i]) == false) {
+            SetInsert(setWithOddOcc, arr[i]);
+        } else {
+            SetDelete(setWithOddOcc, arr[i]);
+        }
+    }
+    return SetSize(setWithOddOcc);
 }

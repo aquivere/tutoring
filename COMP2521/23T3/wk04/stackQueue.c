@@ -17,9 +17,17 @@ Queue QueueNew(void) {
 }
 
 void QueueEnqueue(Queue q, int item) {
-	// TODO
+	StackPush(q->s1, item);
 }
 
 int QueueDequeue(Queue q) {
-	// TODO
+	if (StackSize(q->s2) == 0) {
+		while (StackSize(q->s1) > 0) {
+			int item = StackPop(q->s1);
+		StackPush(q->s2, item);
+		}
+	}
+	int toReturn = StackPop(q->s2);
+
+	return toReturn;
 }
